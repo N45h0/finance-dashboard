@@ -226,15 +226,14 @@ export default function Dashboard() {
                     <PieChart>
                       <Pie
                         data={[
-                          { name: 'LAFIO', value: 14676.60 },
-                          { name: 'Lovia', value: 23519.60 }
-                        ]}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={60}
-                        outerRadius={80}
-                        fill="#8884d8"
-                        dataKey="value"
+                          { name: 'LAFIO', value: 14676.60, fill: "#1a1757" },
+                          { name: 'Lovia', value: 23519.60, fill: "#8884d8" }
+                          ]}
+                          cx="50%"
+                          cy="50%"
+                          innerRadius={60}
+                          outerRadius={80}
+                          dataKey="value"
                       />
                       <Tooltip formatter={(value) => formatCurrency(value)} />
                       <Legend />
