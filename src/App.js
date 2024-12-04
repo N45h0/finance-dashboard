@@ -181,7 +181,7 @@ const services = [
         id: "GONE-2024",
         name: "Google One",
         price: {
-          amount: 20.00,
+          amount: 19.99,
           currency: "USD",
           uyuEquivalent: 933
         },
@@ -189,16 +189,16 @@ const services = [
         paymentMethod: "debit_6039",
         billingDay: 1,
         contract: {
-          startDate: "2024-01-01",
-          renewalDate: "2025-01-01",
+          startDate: "2024-12-01",
+          renewalDate: "2025-12-01",
           cancellationDate: null,
           duration: "12 months",
           progress: 8
         },
         paymentHistory: [
           {
-            date: "2024-01-01",
-            amount: 240.00, // pago anual
+            date: "2024-12-01",
+            amount: 19.99, // pago anual
             currency: "USD",
             status: "paid",
             method: "debit_6039"
