@@ -538,9 +538,20 @@ export default function Dashboard() {
                     <ListItem key={index}>
                       <ListItemText
                         primary={service.name}
-                        secondary={`${formatCurrency(service.amount, service.currency)} ${
-                          service.currency === "USD" ? `(${formatCurrency(service.uyu)})` : ''
-                        }`}
+                        secondary={
+                          <>
+                            {formatCurrency(service.price.amount, service.price.currency)}
+                            {service.price.currency === "USD" && 
+                              ` (${formatCurrency(service.price.uyuEquivalent)})`}
+                            <br />
+                            {service.billingCycle === 'annual' && '(Pago Anual)'}
+                            <LinearProgress 
+                              variant="determinate" 
+                              value={service.contract?.progress || 0}
+                              sx={{ mt: 1 }}
+                            />
+                          </>
+                        }
                       />
                     </ListItem>
                   ))}
@@ -548,7 +559,7 @@ export default function Dashboard() {
                 <Divider />
                 <Box sx={{ mt: 2 }}>
                   <Typography variant="h6">
-                    Total Servicios Mensuales: {formatCurrency(4716)}
+                    Total Servicios Mensuales: {formatCurrency(monthlyTotal)}
                   </Typography>
                 </Box>
               </CardContent>
@@ -558,22 +569,39 @@ export default function Dashboard() {
           <Grid item xs={12} md={6}>
             <Card>
               <CardContent>
-                <Typography variant="h6">Fechas de Facturación</Typography>
+                <Typography variant="h6">Próximos Vencimientos</Typography>
                 <List>
-                  {[
-                    { day: 1, desc: `Préstamo Argentina (${formatCurrency(1411.58)})` },
-                    { day: 3, desc: `Spotify (${formatCurrency(11.99, "USD")})` },
-                    { day: 3, desc: `Préstamo Dentista (${formatCurrency(1916.39)})` },
-                    { day: 3, desc: `Préstamo Buenos Aires (${formatCurrency(1801.64)})` }
-                  ].map((item, index) => (
+                  {upcomingPayments.map((payment, index) => (
                     <ListItem key={index}>
                       <ListItemIcon>
                         <Calendar />
                       </ListItemIcon>
-                      <ListItemText primary={`Día ${item.day}: ${item.desc}`} />
+                      <ListItemText 
+                        primary={`${payment.service}`}
+                        secondary={`${payment.date.toLocaleDateString()} - ${formatCurrency(payment.amount)}`}
+                      />
                     </ListItem>
                   ))}
                 </List>
+              </CardContent>
+            </Card>
+
+            <Card sx={{ mt: 3 }}>
+              <CardContent>
+                <Typography variant="h6">Estado de Contratos</Typography>
+                {contractStatus.map((contract, index) => (
+                  <Box key={index} sx={{ mt: 2 }}>
+                    <Typography variant="subtitle1">{contract.name}</Typography>
+                    <LinearProgress 
+                      variant="determinate" 
+                      value={contract.progress}
+                      sx={{ mb: 1 }} 
+                    />
+                    <Typography variant="caption" color="textSecondary">
+                      {contract.daysUntilRenewal} días para renovación
+                    </Typography>
+                  </Box>
+                ))}
               </CardContent>
             </Card>
           </Grid>
