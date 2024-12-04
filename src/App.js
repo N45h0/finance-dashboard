@@ -99,10 +99,186 @@ const services = [
         uyu: 933
       },
       {
+const services = [
+  {
+    category: "Digitales",
+    account: "6039",
+    items: [
+      {
+        id: "SPT-2024",
+        name: "Spotify Premium Familiar",
+        price: {
+          amount: 11.99,
+          currency: "USD",
+          uyuEquivalent: 577
+        },
+        billingCycle: "monthly",
+        paymentMethod: "debit_6039",
+        billingDay: 3,
+        contract: {
+          startDate: "2024-01-15",
+          renewalDate: "2025-01-15",
+          cancellationDate: null,
+          duration: "12 months",
+          progress: 8 // porcentaje de avance
+        },
+        paymentHistory: [
+          {
+            date: "2024-02-03",
+            amount: 11.99,
+            currency: "USD",
+            status: "paid",
+            method: "debit_6039"
+          },
+          {
+            date: "2024-01-03",
+            amount: 11.99,
+            currency: "USD",
+            status: "paid",
+            method: "debit_6039"
+          }
+        ]
+      },
+      {
+        id: "CHATGPT-2024",
+        name: "ChatGPT",
+        price: {
+          amount: 20.00,
+          currency: "USD",
+          uyuEquivalent: 933
+        },
+        billingCycle: "monthly",
+        paymentMethod: "debit_6039",
+        billingDay: 15,
+        contract: {
+          startDate: "2024-01-15",
+          renewalDate: "2025-01-15",
+          cancellationDate: null,
+          duration: "12 months",
+          progress: 8
+        },
+        paymentHistory: [
+          {
+            date: "2024-02-15",
+            amount: 20.00,
+            currency: "USD",
+            status: "paid",
+            method: "debit_6039"
+          },
+          {
+            date: "2024-01-15",
+            amount: 20.00,
+            currency: "USD",
+            status: "paid",
+            method: "debit_6039"
+          }
+        ]
+      },
+      {
+        id: "CLDE-2024",
+        name: "Claude",
+        price: {
+          amount: 20.00,
+          currency: "USD",
+          uyuEquivalent: 933
+        },
+        billingCycle: "monthly",
+        paymentMethod: "debit_6039",
+        billingDay: 20,
+        contract: {
+          startDate: "2024-01-20",
+          renewalDate: "2025-01-20",
+          cancellationDate: null,
+          duration: "12 months",
+          progress: 8
+        },
+        paymentHistory: [
+          {
+            date: "2024-02-20",
+            amount: 20.00,
+            currency: "USD",
+            status: "pending",
+            method: "debit_6039"
+          },
+          {
+            date: "2024-01-20",
+            amount: 20.00,
+            currency: "USD",
+            status: "paid",
+            method: "debit_6039"
+          }
+        ]
+      },
+      {
+        id: "GONE-2024",
+        name: "Google One",
+        price: {
+          amount: 20.00,
+          currency: "USD",
+          uyuEquivalent: 933
+        },
+        billingCycle: "annual",
+        paymentMethod: "debit_6039",
+        billingDay: 1,
+        contract: {
+          startDate: "2024-01-01",
+          renewalDate: "2025-01-01",
+          cancellationDate: null,
+          duration: "12 months",
+          progress: 8
+        },
+        paymentHistory: [
+          {
+            date: "2024-01-01",
+            amount: 240.00, // pago anual
+            currency: "USD",
+            status: "paid",
+            method: "debit_6039"
+          }
+        ]
+      },
+      {
+        id: "ANTL-2024",
         name: "Plan Antel",
-        amount: 520,
-        currency: "UYU",
-        period: "Mensual"
+        price: {
+          amount: 520,
+          currency: "UYU",
+          uyuEquivalent: 520
+        },
+        billingCycle: "monthly",
+        paymentMethod: "debit_6039",
+        billingDay: 10,
+        contract: {
+          startDate: "2023-06-10",
+          renewalDate: "2025-06-10",
+          cancellationDate: null,
+          duration: "24 months",
+          progress: 33,
+          details: "Contrato a 2 años"
+        },
+        paymentHistory: [
+          {
+            date: "2024-02-10",
+            amount: 520,
+            currency: "UYU",
+            status: "pending",
+            method: "debit_6039"
+          },
+          {
+            date: "2024-01-10",
+            amount: 520,
+            currency: "UYU",
+            status: "paid",
+            method: "debit_6039"
+          },
+          {
+            date: "2023-12-10",
+            amount: 520,
+            currency: "UYU",
+            status: "paid",
+            method: "debit_6039"
+          }
+        ]
       }
     ]
   },
@@ -110,10 +286,33 @@ const services = [
     category: "Otros",
     items: [
       {
+        id: "PELU-2024",
         name: "Peluquería",
-        amount: 820,
-        currency: "UYU",
-        period: "Mensual"
+        price: {
+          amount: 820,
+          currency: "UYU",
+          uyuEquivalent: 820
+        },
+        billingCycle: "monthly",
+        paymentMethod: "cash",
+        billingDay: null, // no tiene día fijo
+        contract: null, // no tiene contrato
+        paymentHistory: [
+          {
+            date: "2024-02-05",
+            amount: 820,
+            currency: "UYU",
+            status: "paid",
+            method: "cash"
+          },
+          {
+            date: "2024-01-08",
+            amount: 820,
+            currency: "UYU",
+            status: "paid",
+            method: "cash"
+          }
+        ]
       }
     ]
   }
