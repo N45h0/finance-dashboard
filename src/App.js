@@ -73,38 +73,6 @@ const services = [
     account: "6039",
     items: [
       {
-        name: "Spotify Premium Familiar",
-        amount: 11.99,
-        currency: "USD",
-        billingDay: 3,
-        uyu: 577
-      },
-      {
-        name: "ChatGPT",
-        amount: 20,
-        currency: "USD",
-        uyu: 933
-      },
-      {
-        name: "Claude",
-        amount: 20,
-        currency: "USD",
-        uyu: 933
-      },
-      {
-        name: "Google One",
-        amount: 20,
-        currency: "USD",
-        period: "Anual",
-        uyu: 933
-      },
-      {
-const services = [
-  {
-    category: "Digitales",
-    account: "6039",
-    items: [
-      {
         id: "SPT-2024",
         name: "Spotify Premium Familiar",
         price: {
@@ -426,6 +394,9 @@ function formatCurrency(amount, currency = "UYU") {
 
 export default function Dashboard() {
   const [value, setValue] = useState(0);
+  const monthlyTotal = calculateServices.getMonthlyTotal();
+  const upcomingPayments = calculateServices.getUpcomingPayments();
+  const contractStatus = calculateServices.getContractStatus();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -440,6 +411,13 @@ export default function Dashboard() {
       <Alert severity="error" sx={{ mb: 3 }}>
         Adelanto de sueldo vencido: {formatCurrency(4831.57)}
       </Alert>
+
+      {/* Mostrar alertas de renovación de servicios */}
+      {serviceAlerts.map((alert, index) => (
+        <Alert key={index} severity={alert.severity} sx={{ mb: 2 }}>
+          {alert.message}
+        </Alert>
+      ))}
 
       <Tabs value={value} onChange={handleChange}>
         <Tab label="Resumen" />
