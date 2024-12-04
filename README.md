@@ -48,19 +48,26 @@ Un dashboard financiero personal desarrollado con React y Material-UI que permit
 ## 💻 Instalación Local
 
 1. Clona el repositorio
+```bash
 git clone https://github.com/N45h0/finance-dashboard.git
+```
 
 2. Instala las dependencias
+```bash
 cd finance-dashboard
 npm install
+```
 
 3. Inicia el servidor de desarrollo
+```bash
 npm start
+```
 
 4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador
 
 ## 📁 Estructura del Proyecto
 
+```
 finance-dashboard/
 ├── public/
 │   ├── index.html
@@ -71,6 +78,7 @@ finance-dashboard/
 │   └── index.css      # Estilos globales
 ├── package.json
 └── README.md
+```
 
 ## 📱 Características Mobile
 
