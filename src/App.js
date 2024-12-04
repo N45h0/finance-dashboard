@@ -181,9 +181,9 @@ const services = [
         id: "GONE-2024",
         name: "Google One",
         price: {
-          amount: 19.99,
+          amount: 1.6,
           currency: "USD",
-          uyuEquivalent: 933
+          uyuEquivalent: 69
         },
         billingCycle: "annual",
         paymentMethod: "debit_6039",
